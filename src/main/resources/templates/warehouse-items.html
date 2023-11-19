@@ -39,7 +39,7 @@
 				
 					<article th:each="warehousingItem : ${warehousingItems}" class="oneitem">
 						<span th:text="${warehousingItem.ware.name}" class="highlight-back"></span>
-						<span th:text="${warehousingItem.quantity}"></span>
+						<span th:attr="style='text-align: right'" th:text="${warehousingItem.quantity}"></span>
 						<span th:text="${warehousingItem.ware.unit}"></span>
 						<span th:text="${warehousingItem.warehouse.name}"></span>
 						<span th:text="${warehousingItem.warehouse.address}" ></span>

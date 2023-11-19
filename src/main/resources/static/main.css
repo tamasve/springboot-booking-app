@@ -20,7 +20,14 @@ main {
 	height: 500px;
 	padding: 0px 30px 0px 30px;
 	margin: 0px;
-	background-color: rgb(0, 128, 192);
+	background-color: aliceblue;
+	border-radius: 1em;
+}
+
+.warehousing-panel input, 
+.warehousing-panel label {
+	align-items: center;
+
 }
 
 .warehousing-items {
@@ -170,11 +177,33 @@ article {
 }
 
 .comment {
-/*	width: 30em;*/
-/*	height: 5em;*/
 	font-style: oblique;
+}
+
+form {
+	margin-left: 4em;
+}
+
+form input,
+form textarea {
+	font-weight: 700;
+}
+
+form textarea {
+	width: 30em;
+	height: 5em;
 }
 	
 .highlight-back {
 	background-color: rgb(128, 255, 128);
+}
+
+button {
+	background-color: yellow;
+	border-radius: 1em;
+	padding: 0.5em;
+}
+
+.partners, .partners section {
+	color:burlywood;
 }

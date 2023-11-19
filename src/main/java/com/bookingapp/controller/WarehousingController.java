@@ -71,6 +71,8 @@ public class WarehousingController {
 	@PostMapping("/warehouse-record")
 	public String warehouseRecord(@ModelAttribute("warehousingItem") WarehousingItem warehousingItem) {
 		
+		if (warehousingItem.getRegisteredAt() == null || warehousingItem.getQuantity() == 0)  return "redirect:/warehousing";
+		
 		log.info("datetime = " + warehousingItem.getRegisteredAt().toString());
 		log.info("quantity = " + String.valueOf(warehousingItem.getQuantity()));
 		log.info("ware = " + warehousingItem.getDescription());

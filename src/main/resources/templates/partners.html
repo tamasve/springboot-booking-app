@@ -16,7 +16,7 @@
 					
 		<a th:href="@{/newpartner}" class="form-button alignright">Add new partner...</a>
 		
-		<article th:each="partner : ${partners}">
+		<article class="partners" th:each="partner : ${partners}">
 			<header class="article-header" th:text="${partner.name}">
 				
 			</header>
