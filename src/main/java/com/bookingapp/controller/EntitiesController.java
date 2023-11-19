@@ -53,7 +53,7 @@ public class EntitiesController {
 	
 	@PostMapping("/new")
 	public String newPartnerSave(@ModelAttribute Partner partner) {
-		System.out.println(partner);
+		log.info(partner.toString());
 		if (partner.getName() != "" && partner.getAddress() != "" && partner.getEmail() != "")
 			partnerService.savePartner(partner);
 		return "redirect:/partners";
