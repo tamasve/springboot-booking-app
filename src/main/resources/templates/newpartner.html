@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- NEW PARTNER -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	</head>
+	
+	<body>
+		
+		<section th:replace="~{header :: header}"></section>
+		
+		<h1>
+			REGISTRATE A NEW PARTNER
+		</h1>
+		
+		<section>
+		
+			<form name="partner-registration" class="form" th:action="@{/new}" th:object="${partner}" method="post">
+				<input type="text" th:field="*{name}" id="name" placeholder="company name" class="form-input" />
+				<input type="text" th:field="*{address}" id="address" placeholder="company address" class="form-input long" />
+				<input type="text" th:field="*{email}" id="email" placeholder="company e-mail" class="form-input" />
+				<input type="submit" class="form-button" value="Registrate partner"/>
+			</form>
+		
+		</section>
+
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

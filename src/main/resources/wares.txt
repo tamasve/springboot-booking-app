@@ -1,0 +1,6 @@
+Milk _ liter
+Bread _ kg
+Oil _ liter
+Paprika _ kg
+Trousers _ piece
+Linen _ meter

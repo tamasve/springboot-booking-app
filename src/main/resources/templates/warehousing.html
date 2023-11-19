@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- WAREHOUSING -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	</head>
+	
+	<body>
+		
+		<section th:replace="~{header :: header}"></section>
+		
+		<h1>
+			WAREHOUSING = RECORDING ITEMS
+		</h1>
+		
+		<main>
+			
+				<!-- SECTION FOR CREATING A NEW WAREHOUSING ITEM -->
+							
+			<article class="warehousing-panel">
+				<header>
+					<h2>Make a record about <br/> the warehousing of a ware</h2>
+				</header>
+				
+				
+				<section>
+					<form name="warehouse-record" th:action="@{/warehouse-record}" th:object="${warehousingItem}" method="post">
+						<input type="text" id="quantity" name="quantity" th:field="*{quantity}" />
+						<label th:text="${' ' + selectedWare.unit + ' ' + selectedWare.name}"></label>
+						<br />
+						<br />
+						<label>were stored into</label>
+						<br /><br />
+						<label th:text="${selectedWarehouse['name'] + ' /'}">North WH</label>
+						<br />
+						<label th:text="${selectedWarehouse.address}" >Chicago</label>
+						<br /><br />
+						<label>on</label>
+						<br />
+						<input type="datetime-local" th:field="*{registeredAt}" />
+						<br /><br />
+						<label>DESCRIPTION:</label>
+						<br />
+						<textarea class="comment" th:field="*{description}" placeholder="important informations related to the economic events..." ></textarea>
+						<br /><br />
+						<button type="submit">Record item</button>
+					</form>
+				</section>
+	
+				<footer>
+					
+				</footer>
+	
+			</article>
+			
+				<!-- SECTION FOR CHOOSING A WARE ITEM -->
+		
+			<aside class="wares">
+				<h2>Choose the ware...</h2>
+				<hr/>
+				<ul>
+					<li th:each="ware : ${wares}">
+						<a th:if="${ware.name}==${selectedWare.name}" style="color: yellow; font-weight: bold;" th:text="${ware.name}" th:href="@{/ware/{id}(id=${ware.name})}">Milk</a>
+						<a th:unless="${ware.name}==${selectedWare.name}" th:text="${ware.name}" th:href="@{/ware/{id}(id=${ware.name})}">Milk</a>
+					</li>
+				</ul>
+			</aside>
+			
+				<!-- SECTION FOR CHOOSING A WAREHOUSE ITEM -->
+			
+			<aside class="warehouses">
+				<h2>Choose the warehouse...</h2>
+				<hr/>
+				<ul>
+					<li th:each="warehouse : ${warehouses}">
+						<a th:if="${warehouse.name}==${selectedWarehouse.name}" style="color: yellow; font-weight: bold;" th:text="${warehouse.name}" th:href="@{/warehouse/{id}(id=${warehouse.name})}">North WH</a>
+						<a th:unless="${warehouse.name}==${selectedWarehouse.name}" th:text="${warehouse.name}" th:href="@{/warehouse/{id}(id=${warehouse.name})}">North WH</a>
+					</li>
+				</ul>
+			</aside>
+			
+		</main>
+	
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

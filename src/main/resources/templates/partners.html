@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- PARTNERS -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	</head>
+	
+	<body>
+		
+		<section th:replace="~{header :: header}"></section>
+		
+		<h1>
+			PARTNER RECORDS
+		</h1>
+					
+		<a th:href="@{/newpartner}" class="form-button alignright">Add new partner...</a>
+		
+		<article th:each="partner : ${partners}">
+			<header class="article-header" th:text="${partner.name}">
+				
+			</header>
+			
+			<section >
+				<span th:text="${partner.address}">address</span>
+				<span th:text="${partner.email}">e-mail</span>
+			</section>
+			
+			<footer>
+				
+			</footer>
+			
+		</article>
+	
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

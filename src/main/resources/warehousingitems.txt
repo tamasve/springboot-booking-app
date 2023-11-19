@@ -1,0 +1,8 @@
+1 _ 1 _ 4 _ 24-03-2023 11:05 _ perfect transfer
+5 _ 3 _ 7 _ 17-04-2023 09:45 _ delayed transfer
+3 _ 2 _ 17 _ 13-04-2023 08:45 _ put into frigo
+4 _ 3 _ 50 _ 17-04-2023 09:47 _ big box - expiration on 01-07-2023!
+5 _ 3 _ 11 _ 01-05-2023 18:13 _ perfect transfer
+3 _ 1 _ 40 _ 01-05-2023 15:13 _ transferred in 2 bulks - part 1
+3 _ 1 _ 40 _ 01-05-2023 15:22 _ transferred in 2 bulks - part 2
+6 _ 1 _ 200 _ 04-05-2023 14:26 _ bought in a daily action

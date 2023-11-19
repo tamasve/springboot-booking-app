@@ -1,0 +1,4 @@
+INSERT INTO partners (id, name, address, email) VALUES (1, 'Jakoo Ltd', '1705 Hart Street, New Haven, Connecticut, 06511 USA', 'jakooltd@yahoo.com');
+INSERT INTO partners (id, name, address, email) VALUES (2, 'Carmen Ltd', '3316 Gnatty Creek Road, Bohemia, New York, 11716 USA', 'carmenltd@yahoo.com');
+INSERT INTO partners (id, name, address, email) VALUES (3, 'New Age Skirt Plc', '1126 Wright Court, Hamilton, Alabama, 35570 USA', 'newageplc@newageplc.com');
+INSERT INTO partners (id, name, address, email) VALUES (4, 'All Eyes Plc', '4481 Arrowood Drive, Jacksonville, Florida, 32216 USA', 'alleyesplc@alleyes.com');

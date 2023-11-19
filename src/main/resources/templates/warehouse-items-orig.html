@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- WAREHOUSING -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	<body>
+		<script>
+			function popup(msg) {alert(msg);}
+		</script>
+									<!-- JS INLINED expression: somedata comes with Model, and be put in inline form -->
+		<script th:inline="javascript">
+			function print() {
+				let param = [[${somedata}]];
+				alert(param);
+			}
+		</script>
+		
+		<section th:replace="~{header :: header}"></section>
+		
+		<h1  th:attr="style='color:aqua'">
+			WAREHOUSE ITEMS
+		</h1>
+		
+		<button onclick="print();">Print some data handed over from Java to JS by JS inline</button>
+		
+		<!--/*-->
+		<div>
+			This div will not be seen when using Thymeleaf... it can be seen only on prototype due to Thymeleaf parser-level comment block: <!--/* */-->
+		</div>
+		<!--*/-->
+		
+		<main>
+							
+			<article class="warehousing-items">
+				<header>
+					<h2>Wares in the warehouses</h2>
+				</header>
+				
+				<section>
+					<article th:each="warehousingItem : ${warehousingItems}" class="oneitem">
+						<h2 th:text="${warehousingItem.quantity + ' ' + warehousingItem.ware.unit + ' ' + warehousingItem.ware.name + ' were stored into'}"></h2>
+						<label th:text="${warehousingItem.warehouse.name + ' -'}"></label>
+						<br />
+						<p th:text="${warehousingItem.warehouse.address}" ></p>
+						<p th:text="${'on ' + #temporals.format(warehousingItem.registeredAt, 'yyyy.MM.dd HH:mm')}" >on 2023.05.01 13:27</p>
+						<br />
+						<p>DESCRIPTION:</p>
+						<p class="comment">*** [[${warehousingItem.description}]]</p>	<!-- INLINED expression: no th:text, no "", put as a text, [[...]] = th:text, [(...)] = th:utext, all others = text -->
+					</article>
+				</section>
+	
+				<footer>
+					
+				</footer>
+	
+			</article>
+		
+			<aside class="wares">
+				<h2>Choose the ware...</h2>
+				<hr/>
+				<ul>
+					<li th:each="ware : ${wares}">
+						<a th:if="${ware.name}==${selectedWare.name}" style="color: yellow; font-weight: bold;" th:text="${ware.name +' = '+ ware.toString()}" th:href="@{/warehouse-items/ware/{id}(id=${ware.name})}">Milk</a>
+						<a th:unless="${ware.name}==${selectedWare.name}" th:text="|${ware.name} = ${ware.toString()}|" th:href="@{/warehouse-items/ware/{id}(id=${ware.name})}">Milk</a>
+					</li>											<!-- |...| >> ${...} = var.expr., #{...}, ..., all others = text -->
+				</ul>
+			</aside>
+			
+			<aside class="warehouses">
+				<h2 th:data-msg="${message}" th:onclick="popup(this.getAttribute('data-msg'))">Choose the warehouse...</h2>		<!-- parameter handover to a JS function -->
+				<hr/>
+				<ul>	<!-- 2nd par.= ITERATION STATUS: many informative data about the coll. - index, size, even/odd, first, last -->
+					<li th:each="warehouse, status : ${warehouses}">	<!-- a more straightforward solution for highlighting than the above if/unless version -->
+						<a th:class="${warehouse.name}==${selectedWarehouse.name} ? 'highlighted'" th:text="${status.count + '/' + status.size + ' - ' + warehouse.name}" th:href="@{/warehouse-items/warehouse/{id}(id=${warehouse.name})}">North WH</a>
+					</li>
+				</ul>
+			</aside>
+			
+		</main>
+			
+	
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- WAREHOUSING -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	<body>
+		
+		<section th:replace="~{header :: header}"></section>
+		
+		<h1>
+			WAREHOUSE ITEMS
+		</h1>
+		
+		
+		<!--/*-->
+		<div>
+			This div will not be seen when using Thymeleaf... it can be seen only on prototype due to Thymeleaf parser-level comment block: <!--/* */-->
+		</div>
+		<!--*/-->
+		
+		<main>
+							
+			<article class="warehousing-items">
+				<header>
+					<h2>Wares in the warehouses</h2>
+				</header>
+				
+				<section>
+					<article class="header">
+						<span>Name</span>
+						<span>Quantity</span>
+						<span>Unit</span>
+						<span>Warehouse</span>
+						<span>Warehouse address</span>
+						<span>Date</span>
+						<span>Comment</span>
+					</article>
+				
+					<article th:each="warehousingItem : ${warehousingItems}" class="oneitem">
+						<span th:text="${warehousingItem.ware.name}" class="highlight-back"></span>
+						<span th:text="${warehousingItem.quantity}"></span>
+						<span th:text="${warehousingItem.ware.unit}"></span>
+						<span th:text="${warehousingItem.warehouse.name}"></span>
+						<span th:text="${warehousingItem.warehouse.address}" ></span>
+						<span th:text="${#temporals.format(warehousingItem.registeredAt, 'yyyy.MM.dd HH:mm')}" >on 2023.05.01 13:27</span>
+						<span class="comment">*** [[${warehousingItem.description}]]</span>	<!-- INLINED expression: no th:text, no "", put as a text, [[...]] = th:text, [(...)] = th:utext, all others = text -->
+					</article>
+				</section>
+	
+				<footer>
+					
+				</footer>
+	
+			</article>
+		
+			<aside class="wares">
+				<h2>Filter for ware...</h2>
+				<hr/>
+				<ul>
+					<li th:each="ware : ${wares}">
+						<a th:if="${ware.name}==${selectedWare.name}" style="color: yellow; font-weight: bold;" th:text="${ware.name +' / '+ ware.unit}" th:href="@{/warehouse-items/ware/{id}(id=${ware.name})}">Milk</a>
+						<a th:unless="${ware.name}==${selectedWare.name}" th:text="|${ware.name} / ${ware.unit}|" th:href="@{/warehouse-items/ware/{id}(id=${ware.name})}">Milk</a>
+					</li>											<!-- |...| >> ${...} = var.expr., #{...}, ..., all others = text -->
+				</ul>
+			</aside>
+			
+			<aside class="warehouses">
+				<h2 th:data-msg="${message}" th:onclick="popup(this.getAttribute('data-msg'))">Filter for warehouse...</h2>		<!-- parameter handover to a JS function -->
+				<hr/>
+				<ul>	<!-- 2nd par.= ITERATION STATUS: many informative data about the coll. - index, size, even/odd, first, last -->
+					<li th:each="warehouse, status : ${warehouses}">	<!-- a more straightforward solution for highlighting than the above if/unless version -->
+						<a th:class="${warehouse.name}==${selectedWarehouse.name} ? 'highlighted'" 
+							th:text="${status.count == status.size ? '' : status.count + '/' + status.size + ' - '} + ${warehouse.name}" th:href="@{/warehouse-items/warehouse/{id}(id=${warehouse.name})}">North WH</a>
+					</li>
+				</ul>
+			</aside>
+			
+		</main>
+			
+	
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

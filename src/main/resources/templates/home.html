@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- PARTNERS -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	</head>
+	
+	<body>
+		<h1>
+			BOOKING APP HOME PAGE
+		</h1>
+		
+		<article>
+			<header>
+				<h1 th:text="#{${key}(${user})}">Greetings</h1>
+			</header>
+			
+			<section th:replace="~{header :: header}"></section>
+			
+			<footer>
+				
+			</footer>
+			
+		</article>
+	
+		<footer th:replace="~{header :: #footer}"></footer>
+		
+	</body>
+</html>

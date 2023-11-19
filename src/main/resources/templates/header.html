@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>- PARTNERS -</title>
+		<link rel="stylesheet" th:href="@{main.css}" />
+	</head>
+	
+	<body>
+		
+		<section th:fragment="header" th:class="headerBand" >
+			<a th:href="@{/}" class="form-button">To home page...</a>
+			<a th:href="@{/partners}" class="form-button">Show partners...</a>
+			<a th:href="@{/warehousing}" class="form-button">Book a ware into a warehouse...</a>
+			<a th:href="@{/warehouse-items}" class="form-button">Wares in the warehouses...</a>
+		</section>
+		
+		<footer class="page-footer" id="footer">
+			<hr/>
+			@Spring Thymeleaf King, 2023
+		</footer>
+			
+	</body>
+</html>

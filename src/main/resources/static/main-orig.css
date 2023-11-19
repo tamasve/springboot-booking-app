@@ -1,0 +1,152 @@
+:root {
+	background-color: rgb(20, 0, 20);
+	color: rgb(190, 190, 190);
+	font-family: Segoe UI;
+	margin: 20px;
+	font-size: 16px;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+}
+
+.headerBand {
+	background-color: rgb(0, 89, 0);
+}
+
+.warehousing-panel {
+	width: 500px;
+	height: 500px;
+	padding: 0px 30px 0px 30px;
+	margin: 0px;
+	background-color: rgb(0, 128, 192);
+}
+.oneitem {
+	border-radius: 20px;
+	margin: 10px;
+	box-shadow: 10px 10px 10px rgb(128, 255, 255);
+}
+
+.oneitem h2 {
+	padding-top: 0.5em;
+}
+
+section > article {
+	width: 500px;
+	height: 300px;
+	padding: 0px 30px 0px 30px;
+	margin: 0px;
+	background-color: rgb(0, 128, 192);	
+}
+
+.warehousing-items {
+	min-width: 460px;
+}
+
+main > aside {
+	width: 400px;
+	height: 400px;
+	padding: 0px 30px 0px 30px;
+	border-radius: 20px;
+	margin: 10px;
+}
+
+.wares {
+	background-color: rgb(128, 64, 0);
+	box-shadow: 10px 10px 10px rgb(255, 128, 0);
+}
+
+.warehouses {
+	background-color: rgb(0, 128, 0);
+	box-shadow: 10px 10px 10px rgb(128, 255, 0);
+}
+
+.highlighted {
+	color: darkorange;
+	font-weight: bold;
+}
+
+.highlighted :hover {
+	color: crimson;
+}
+
+section {
+	padding: 1em;
+	color:gold;
+}
+
+span {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+hr {
+	margin-top: 2em;	
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+a {
+	color: white;
+	text-decoration:none;
+}
+
+li {
+	list-style: none;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+article {
+	margin: 10px 0px 10px 0px;
+}
+
+.article-header {
+	font-size: 1.5rem;
+	font-style: oblique;
+	padding-top: 0.5em;
+}
+
+.page-footer {
+	padding-top: 2em;
+}
+
+.form-input {
+	font: inherit;
+	padding: 0.5em;
+	border-radius: 0.8em;
+	margin: 0.5em;
+}
+
+.long {
+	width: 30em;
+}
+
+.form-button {
+	font: inherit;
+	border-radius: 0.8em;
+/*	height: 2em;*/
+	background-color: rgb(110, 0, 0);
+	color: white;
+	margin-left: 2em;
+	padding: 0.5em;
+}
+
+.alignright {
+	text-anchor:end;
+}
+
+#quantity {
+	width: 30px;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.comment {
+	width: 30em;
+	height: 5em;
+	font-style: oblique;
+}
