@@ -12,7 +12,8 @@ main {
 }
 
 .headerBand {
-	background-color: rgb(0, 89, 0);
+/*	background-color: rgb(0, 89, 0);*/
+	margin-bottom: 2rem;
 }
 
 .warehousing-panel {
@@ -20,7 +21,7 @@ main {
 	height: 500px;
 	padding: 0px 30px 0px 30px;
 	margin: 0px;
-	background-color: aliceblue;
+	background-color: rgb(255, 128, 0);
 	border-radius: 1em;
 }
 
@@ -111,7 +112,8 @@ h1 {
 	display: inline-block;
 	margin-bottom: 2em;
 	padding: 0.5em 1em;
-	background-color: aliceblue;
+/*	background-color: aliceblue;*/
+	background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 	color: green;
 	border-radius: 1em;
 }
@@ -160,7 +162,8 @@ article {
 	font: inherit;
 	border-radius: 0.8em;
 /*	height: 2em;*/
-	background-color: rgb(110, 0, 0);
+/*	background-color: rgb(110, 0, 0);*/
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(152,70,57,1) 100%);
 	color: white;
 	margin-left: 2em;
 	padding: 0.5em;
@@ -202,6 +205,7 @@ button {
 	background-color: yellow;
 	border-radius: 1em;
 	padding: 0.5em;
+	cursor: pointer;
 }
 
 .partners, .partners section {

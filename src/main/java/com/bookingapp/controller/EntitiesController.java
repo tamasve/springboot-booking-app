@@ -30,7 +30,7 @@ public class EntitiesController {
 	
 	@GetMapping("/")
 	public String home(Model model) {
-		model.addAttribute("user", "Thomas");		// user name into a message from the message.properties
+		model.addAttribute("user", "Dear Guest");		// user name into a message from the message.properties
 		model.addAttribute("key", "home.welcome");	// the key for the message can come from a variable
 		return "home";
 	}
